@@ -1,0 +1,251 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+
+  .container {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      width: 100px;
+      height: 100px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .nav {
+      ul {
+        display: flex;
+        gap: 20px;
+
+        li {
+          list-style: none;
+
+          a {
+            position: relative;
+            text-decoration: none;
+            color: #333;
+            font-size: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+
+            &::after {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background-color: #129396;
+              transition: width 0.3s ease;
+              border-radius: 2px;
+            }
+
+            &:hover {
+              color: #129396;
+
+              &::after {
+                width: 100%;
+              }
+
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+    }
+
+    .icons {
+      .icon-wrapper {
+        position: relative;
+        cursor: pointer;
+
+        svg {
+          font-size: 24px;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+
+        .heart {
+          position: absolute;
+          color: rgba(255, 0, 0, 0.4);
+          opacity: 0;
+          pointer-events: none;
+          top: 0;
+          user-select: none;
+        }
+
+        .heart1 { font-size: 28px; left: 0; }
+        .heart2 { font-size: 34px; left: 12px; }
+        .heart3 { font-size: 22px; left: -12px; }
+
+        &:hover .heart1 { animation: floatHeart 1s ease forwards; }
+        &:hover .heart2 { animation: floatHeart 1s 0.2s ease forwards; }
+        &:hover .heart3 { animation: floatHeart 1s 0.4s ease forwards; }
+      }
+    }
+
+    .signin {
+      padding: 8px 16px;
+      background-color: #129396;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+
+    .bar {
+      display: none;
+    }
+  }
+
+  .menu {
+    padding: 20px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+
+      li {
+        list-style: none;
+
+        a {
+          text-decoration: none;
+          color: #333;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .drawerIcons {
+      margin-bottom: 15px;
+
+      svg {
+        font-size: 24px;
+      }
+    }
+
+    .drawerButton {
+      padding: 8px 16px;
+      background-color: #129396;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) scale(0.6); opacity: 0.6; }
+  50% { transform: translateY(-15px) scale(0.9); opacity: 1; }
+  100% { transform: translateY(-40px) scale(1.3); opacity: 0; }
+}
+
+@media screen and (min-width: 300px) and (max-width: 700px) {
+  .header {
+    height: auto;
+    padding: 10px 0;
+
+    .container {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+      width: 90%;
+
+      .logo {
+        width: 60px;
+        height: 60px;
+
+        img {
+          object-fit: contain;
+        }
+      }
+
+      nav {
+        display: none;
+      }
+
+      .icons {
+        display: none;
+      }
+
+      button {
+        display: none;
+      }
+
+      .bar {
+        display: block;
+        font-size: 24px;
+        color: #129396;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1024px) {
+  .header {
+    height: 18vh;
+    .container {
+      .logo {
+        width: 120px;
+        height: 120px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      nav ul {
+        gap: 12px;
+
+        li a {
+          font-size: 16px;
+          padding: 5px 0;
+        }
+      }
+
+      .icons {
+        font-size: 22px;
+      }
+
+      button {
+        padding: 7px 14px;
+        font-size: 15px;
+      }
+
+      .bar {
+        display: none;
+      }
+    }
+  }
+}
