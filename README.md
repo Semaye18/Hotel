@@ -6,3 +6,4 @@ services page finised.
 contact pages finised.
 sigin finised.
 services page new styles finised.
+detail page and footer finised.
