@@ -8,3 +8,4 @@ sigin finised.
 services page new styles finised.
 detail page and footer finised.
 login front is finised.
+meal pages new stayles finised.
